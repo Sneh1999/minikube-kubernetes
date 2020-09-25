@@ -13,3 +13,14 @@ spec:
             backend:  
               serviceName: adminer
               servicePort: 8080
+    - host: kanban.k8s.com
+      http:
+        paths:
+          - path: /api/
+            backend:
+              serviceName: kaban-app
+              servicePort: 8080
+          - path: /
+            backend:
+              serviceName: kanban-ui
+              servicePort: 80
